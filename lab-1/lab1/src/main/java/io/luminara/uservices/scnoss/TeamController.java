@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by ofadeyi.
  */
-@RestController
+//@RestController
 public class TeamController {
 
     @Autowired
