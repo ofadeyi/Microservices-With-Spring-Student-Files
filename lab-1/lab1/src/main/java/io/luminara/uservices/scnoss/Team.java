@@ -1,13 +1,22 @@
 package io.luminara.uservices.scnoss;
 
-public class Team {
-    private final long id;
-    private final String name;
-    private final String location;
-    private final String mascotte;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-    public Team(long id, String name, String location, String mascotte) {
-        this.id = id;
+@Entity
+public class Team {
+    @Id
+    @GeneratedValue
+    private long id;
+    private String name;
+    private String location;
+    private String mascotte;
+
+    public Team() {
+    }
+
+    public Team(String name, String location, String mascotte) {
         this.name = name;
         this.location = location;
         this.mascotte = mascotte;
@@ -17,15 +26,31 @@ public class Team {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLocation() {
         return location;
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public String getMascotte() {
         return mascotte;
+    }
+
+    public void setMascotte(String mascotte) {
+        this.mascotte = mascotte;
     }
 }
