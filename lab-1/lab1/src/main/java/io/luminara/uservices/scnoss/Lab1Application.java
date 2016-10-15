@@ -5,8 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @SpringBootApplication
 public class Lab1Application {
@@ -20,7 +19,12 @@ public class Lab1Application {
 
 	@PostConstruct
 	public void init(){
-		List<Team> teams =  Arrays.asList(new Team("Globetrotters", "Harlem", ""),
+		Set<Player> players = new HashSet<>();
+		players.add(new Player("player1", "keeper"));
+		players.add(new Player("player2", "defender"));
+		players.add(new Player("player3", "midfield"));
+		players.add(new Player("player4", "striker"));
+		List<Team> teams =  Arrays.asList(new Team("Globetrotters", "Harlem", "", players),
 				new Team("Generals", "Washington", ""));
 
 		teamRepository.save(teams);
